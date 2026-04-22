@@ -19,7 +19,7 @@ CREATE TABLE books (
     publisher VARCHAR(100)
 );
 
-INSERT INTO books (title, publisher) VALUES
+INSERT INTO books (title, author, publisher) VALUES
 ('Java Basics', 'ABC', 'Pearson'),
 ('Cyber Security', 'XYZ', 'OReilly'),
 ('Networks', 'PQR', 'McGrawHill');
