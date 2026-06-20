@@ -1,20 +1,18 @@
+
 <html>
 <head>
     <title>BANK OF INDIA</title>
 </head>
 <body>
 
-<h3>Secure Search (Protected from SQL Injection)</h3>
+    <h3>Secure Search (Protected from SQL Injection)</h3>
 
-<form method="post" action="secure.jsp">
-    Account No: <input type="text" name="ACCOUNT No">
+    <form method="post" action="secure.jsp">
+        Account No:
+        <input type="text" name="accountNo" required>
+        <br><br>
+
+        <input type="submit" value="Check Balance">
+    </form>
+
     <br><br>
-    <input type="submit" value="Check Balance">
-</form>
-
-<br><br>
-
-<a href="sqlInjection.html">Try Vulnerable Version</a>
-
-</body>
-</html>
