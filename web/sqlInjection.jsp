@@ -20,7 +20,7 @@ try {
 
     // VULNERABLE QUERY
     String query =
-        "SELECT name, lastname FROM account WHERE account_no = '" + accountNo + "'";
+        "SELECT name, lastname FROM account WHERE account_no = '" + accountNo;
 
     out.println("<b>Query:</b> " + query + "<br><br>");
 
