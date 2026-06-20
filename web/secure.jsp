@@ -7,7 +7,7 @@
 <body>
 
 <%
-String publisher = request.getParameter("publisher");
+String publisher = request.getParameter("Account Holder");
 
 Connection conn = null;
 PreparedStatement ps = null;
