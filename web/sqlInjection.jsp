@@ -1,7 +1,7 @@
 <%@ page import="java.sql.*" %>
 
 <%
-String publisher = request.getParameter("publisher");
+String account = request.getParameter("account no");
 
 Connection conn = null;
 Statement stmt = null;
@@ -19,7 +19,7 @@ try {
     stmt = conn.createStatement();
 
     // INTENTIONALLY VULNERABLE + BROKEN
-	String query = "SELECT title, author FROM books WHERE publisher = '" + publisher;
+	String query = "SELECT name, lastname FROM account WHERE city = '" + account no;
 	// Enter this: ' UNION SELECT USERNAME, PASSWORD FROM users 
 
     out.println("<b>Query:</b> " + query + "<br><br>");
@@ -27,8 +27,8 @@ try {
     rs = stmt.executeQuery(query);
 
     while(rs.next()) {
-        out.println(rs.getString("title") + "<br>");
-		out.println(rs.getString("author") + "<br>");		
+        out.println(rs.getString("name") + "<br>");
+		out.println(rs.getString("lastname") + "<br>");		
     }
 
 } catch(Exception e) {
