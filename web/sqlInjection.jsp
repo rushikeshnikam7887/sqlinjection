@@ -1,7 +1,7 @@
 <%@ page import="java.sql.*" %>
 
 <%
-String account = request.getParameter("account no");
+String accountNo = request.getParameter("accountNo");
 
 Connection conn = null;
 Statement stmt = null;
@@ -18,17 +18,17 @@ try {
 
     stmt = conn.createStatement();
 
-    // INTENTIONALLY VULNERABLE + BROKEN
-	String query = "SELECT name, lastname FROM account WHERE city = '" + account no;
-	// Enter this: ' UNION SELECT USERNAME, PASSWORD FROM users 
+    // VULNERABLE QUERY
+    String query =
+        "SELECT name, lastname FROM account WHERE account_no = '" + accountNo + "'";
 
     out.println("<b>Query:</b> " + query + "<br><br>");
 
     rs = stmt.executeQuery(query);
 
     while(rs.next()) {
-        out.println(rs.getString("name") + "<br>");
-		out.println(rs.getString("lastname") + "<br>");		
+        out.println("Name: " + rs.getString("name") + "<br>");
+        out.println("Last Name: " + rs.getString("lastname") + "<br><br>");
     }
 
 } catch(Exception e) {
