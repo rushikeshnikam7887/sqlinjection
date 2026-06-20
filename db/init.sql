@@ -14,12 +14,12 @@ INSERT INTO users (username, password) VALUES
 
 CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100),
-	author VARCHAR(100),
-    publisher VARCHAR(100)
+    name VARCHAR(100),
+	lastname VARCHAR(100),
+    city VARCHAR(100)
 );
 
-INSERT INTO books (title, author, publisher) VALUES
+INSERT INTO books (name, lastname, city) VALUES
 ('Java Basics', 'ABC', 'Pearson'),
 ('Cyber Security', 'XYZ', 'OReilly'),
 ('Networks', 'PQR', 'McGrawHill');
