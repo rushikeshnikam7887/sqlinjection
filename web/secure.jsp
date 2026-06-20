@@ -7,7 +7,7 @@
 <body>
 
 <%
-String publisher = request.getParameter("Account Holder");
+String accountNo = request.getParameter("accountNo");
 
 Connection conn = null;
 PreparedStatement ps = null;
@@ -22,27 +22,24 @@ try {
         "root"
     );
 
-    // SECURE QUERY (NO SQL INJECTION)
-    String query = "SELECT name, lastname FROM account WHERE city = ?";
+    String query = "SELECT name, lastname FROM account WHERE account_no = ?";
     ps = conn.prepareStatement(query);
-    ps.setString(1, publisher);
-
-    out.println("<b>Safe Query (PreparedStatement)</b><br><br>");
+    ps.setString(1, accountNo);
 
     rs = ps.executeQuery();
 
-    out.println("<h4>Results for publisher: " + publisher + "</h4>");
+    out.println("<h4>Results for Account No: " + accountNo + "</h4>");
 
     boolean found = false;
 
     while (rs.next()) {
         found = true;
-        out.println(rs.getString("name") + " ..... ");
-        out.println(rs.getString("lastname") + "<br>");
+        out.println("Name: " + rs.getString("name") + "<br>");
+        out.println("Last Name: " + rs.getString("lastname") + "<br><br>");
     }
 
     if (!found) {
-        out.println("No results found.");
+        out.println("No account found.");
     }
 
 } catch(Exception e) {
