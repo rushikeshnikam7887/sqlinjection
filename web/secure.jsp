@@ -23,7 +23,7 @@ try {
     );
 
     // SECURE QUERY (NO SQL INJECTION)
-    String query = "SELECT title, author FROM books WHERE publisher = ?";
+    String query = "SELECT name, lastname FROM account WHERE city = ?";
     ps = conn.prepareStatement(query);
     ps.setString(1, publisher);
 
@@ -37,8 +37,8 @@ try {
 
     while (rs.next()) {
         found = true;
-        out.println(rs.getString("title") + " ..... ");
-        out.println(rs.getString("author") + "<br>");
+        out.println(rs.getString("name") + " ..... ");
+        out.println(rs.getString("lastname") + "<br>");
     }
 
     if (!found) {
